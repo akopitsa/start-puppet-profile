@@ -6,7 +6,7 @@ class profile::base(
 ) {
   include ::ssh
   class { '::ntp': 
-    server => $ntp::ntp_servers
+    servers => $ntp::ntp_servers
   }
   if $facts['os']['family'] == 'RedHat' {
     include ::profile::selinux
